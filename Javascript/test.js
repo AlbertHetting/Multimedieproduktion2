@@ -1,3 +1,5 @@
+  /* Console debugging test */
+  
   const video = document.getElementById("Video1");
 
   if (video) {

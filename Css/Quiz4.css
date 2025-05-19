@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Video Properties */
+#mainvideo{
+    margin-top: -1.8%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+#Video1{
+    margin-top: -1.8%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+
+
+/* Javascript Classes */
+
+
+
+
+
+
+body{
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  color: white;
+}
+
+/* Text Properties */
+#frontpagetxt{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -63%;
+}
+
+
+#frontpagetxt h1{
+  font-size: 40px;
+  margin-bottom: 8%;
+}
+
+#frontpagetxt h2{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: -2%;
+}
+
+#textcontainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    justify-content: space-around;
+    margin-right: 6%;
+    margin-bottom: 5%;
+}
+
+#box1, #box3, #box5{
+    margin-left: 12%;
+}
+
+#box2, #box4 {
+    margin-left: 22%;
+}
+
+#reset{
+    margin-left: 3%;
+    margin-top: -58%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0%;
+
+}
+
+h2 a{
+    color: white;
+    text-decoration: none;
+    margin-left: -55%;
+}
+
+#Backspace{
+    width: 55%;
+}
+
+
+#Answers{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#box1, #box2, #box3, #box4, #box5{
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+h3{
+    margin-top: 8%;
+    color: black;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

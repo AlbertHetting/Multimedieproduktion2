@@ -1,36 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="Css/global.css">
-    <link rel="stylesheet" href="Css/quiz1.css">
+    <title>Quiz 1</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/quiz1.css">
+    <meta name="viewport" content="width=1366, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
+  <!---------------- Background video ---------------->
+  <section class="BackgroundVID">
+      <video autoplay muted loop playsinline id="mainvideo">
+        <source src="Videos/Dotted50v3.mp4" type="video/mp4">
+      </video>
+  </section>
 
-<section class="BackgroundVID">
-    <video autoplay muted loop id="mainvideo" src="Videos/Dotted50v2.mp4"></video>
-</section>
+  <!---------------- Top Nav ---------------->
+  <header>
+    <nav class="nav">
+        <a href="index.html" class="nav-left">
+            <img src="images2/Back.svg" alt="Back" height="24">
+            <span>Forfra</span>
+        </a>
+        <a href="#" class="nav-right">
+            <img src="images2/Language.svg" alt="Language" height="24">
+            <span>Sprog</span>
+        </a>
+    </nav>
+  </header>
 
-<main>
+  <main>
+    <!---------------- Question ---------------->
+    <section class="quiz-question">
+      <h3>
+        Hvor meget mindre er det kvindelige hjerte end
+        det mandlige hjerte?
+      </h3>
+    </section>
 
-    <h1>Hvor meget mindre er det kvindelige hjerte end
-det mandlige hjerte?</h1>
+    <!---------------- Slider ---------------->
+    <section class="slider-section">
+      <p class="slider-explanation-text">
+        Træk og slip cirklen til procentsatsen som du mener er korrekte
+      </p>
+      <div class="slider-container">
+        <span class="slider-min">0 %</span>
+        <div class="slider-rail">
+          <div class="slider-dot">
+            <div class="dot-text">
+              <img src="Images2/slider_bubble.svg" alt="Slider bubble">
+              <span class="bubble-text">0 %</span>
+            </div>
+          </div>
+        </div>
+        <span class="slider-max">100 %</span>
+      </div>
+    </section>
+    
+    <!---------------- Illustration ---------------->
+    <section class="Quiz1-illustration">
+      <div class="Quiz1-illustration-container">
+        <img src="Images2/Heart_v2.png" alt="Female heart" class="heart-left">
+        <img src="Images2/Heart_v2.png" alt="Male heart" class="heart-right">
+      </div>
+    </section>
 
-
-
-
-
-
-
-</main>
-
-
-
-
-
+    <!---------------- Bottom section ---------------->
+    <section class="Bottom-section">
+      <div class="container">
+        <a href="Video2.html" class="Next" id="nextBtn">
+          Fortsæt
+          <img src="Images2/next.svg" alt="Next arrow" style="width: 37px; height: 37px;">
+        </a>
+        <div class="progress-bar-container">
+          <img src="Images2/progress_bar.svg" alt="Progress bar" class="progress-bar">
+        </div>
+    </section>
+  </main>
+    <!---------------- Script ---------------->
+  <script src="Javascript/slider1.js"></script>
 
 </body>
 </html>
