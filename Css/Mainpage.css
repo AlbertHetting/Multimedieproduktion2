@@ -4,13 +4,31 @@
   }
 
 /* Video Properties */
+
+main{
+  display: block;
+}
+
 #mainvideo{
     margin-top: -1.8%;
     height: 100%;
     width: 100%;
     position: relative;
     z-index: -1;
+    display: block;
+ 
 }
+
+#Videoplay{
+    margin-top: -1.8%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    display: none;
+}
+
+
 
 #Video1 , #Video2, #Video3, #Video4{
     margin-top: -1.8%;
@@ -26,11 +44,6 @@
 
 
 /* Javascript Classes */
-
-
-
-
-
 
 body{
   font-family: "Inter", sans-serif;

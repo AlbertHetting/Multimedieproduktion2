@@ -5,8 +5,30 @@ function Redirect() {
     window.location.href = "Quiz1.html";
 }
 
-  const video = document.getElementById("Video1");
-  video.addEventListener("ended", Redirect);
+function playvideo(){
+    const videox = document.getElementById("Videoplay")
+    const evry = document.querySelector("main")
+
+    videox.style.display = "block";
+    evry.style.display = "none";
+    
+
+
+    videox.muted = false;
+    videox.play().then(() => {
+      console.log("Video is playing with sound.");
+    }).catch((err) => {
+      console.warn("Playback failed:", err);
+    });
+    videox.addEventListener("ended", Redirect);
+  }
+
+
+
+
+
+
+
 
 
 
