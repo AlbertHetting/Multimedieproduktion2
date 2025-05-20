@@ -30,43 +30,38 @@
     </section>
 
     <div id="textcontainer">
-    <h2>Træk de symptomer du mener er korrekte</h2>
-    <h2> dit svar</h2>
+    <h2>Vælg 3 symptomer du mener er korrekte</h2>
     </div>
 
-    <section id="Dragndrop">
+    <section id="Answerboxes">
 
         <div id="Answers">
-            <div id="box1" > <h3 >Kropssmerter</h3> </div>
-            <div id="box2" > <h3 >Højt Boldtryk</h3> </div>
-            <div id="box3" > <h3 >Stråling i arme</h3> </div>
-            <div id="box4" > <h3 >Svimmelhed</h3> </div>
-            <div id="box5" > <h3 >Ondt i brystet</h3> </div>
+            <div class="box1" data-value="correct" onclick="checkanswer()"> <h3 >Kropssmerter</h3> </div>
+            <div class="box2" data-value="wrong" onclick="checkanswer()"> <h3 >Højt Boldtryk</h3> </div>
+            <div class="box3" data-value="correct" onclick="checkanswer()"> <h3 >Stråling i arme</h3> </div>
+            <div class="box4" data-value="wrong" onclick="checkanswer()"> <h3 >Svimmelhed</h3> </div>
+            <div class="box5" data-value="correct" onclick="checkanswer()"> <h3 >Ondt i brystet</h3> </div>
         </div>
 
-        <div id="arrowpointer">
-            <img src="Images/Arrowpoint.png" alt="">
-        </div>
+        <section class="textfeedback">
+            
 
-        <div id="boxes">
-
-
-            <div id="box11" > <h3 ></h3> </div>
-            <div id="box22" > <h3 ></h3> </div>
-            <div id="box33" > <h3 ></h3> </div>
-
-        </div>
-
-
-
-
+        </section>
 
     </section>
 
+    <section id="containerbutton">
+    <section id="boxcon">
+     <a href="Video1.html"> <div id="box1"></div> </a>
+    </section>
+    <a id="udforsk" href="end.html">
 
-
+        <h2>Fortsæt</h2>
+        <img src="Images/Arrow.png" alt="" id="arrow1" href="#">  
+    </a>
+    </section>
 </main>
 
-<script src="Javascript/Js.js"> </script>
+<script src="Javascript/jsquiz4.js"> </script>
 </body>
 </html>

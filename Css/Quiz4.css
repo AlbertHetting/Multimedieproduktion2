@@ -58,18 +58,16 @@ body{
 #textcontainer{
     display: flex;
     flex-direction: row;
-    gap: 20%;
-    justify-content: space-around;
-    margin-right: 6%;
+    justify-content: center;
     margin-bottom: 5%;
 }
 
-#box1, #box3, #box5{
-    margin-left: 12%;
+.box1, .box3, .box5{
+    margin-right: 5%;
 }
 
-#box2, #box4 {
-    margin-left: 22%;
+.box2, .box4 {
+    margin-left: 70%;
 }
 
 #reset{
@@ -93,6 +91,11 @@ h2 a{
     width: 55%;
 }
 
+#Answerboxes{
+  display: flex;
+  justify-content: center;
+  margin-left: -12%;
+}
 
 #Answers{
     display: flex;
@@ -100,20 +103,104 @@ h2 a{
     gap: 30px;
 }
 
-#box1, #box2, #box3, #box4, #box5{
+.box1{
   background-color: rgb(255, 255, 255);
   border-radius: 70px;
   width: 240px;
   height: 70px;
 }
+
+.box2 {
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+.box3{
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+.box4{
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+.box5{
+  background-color: rgb(255, 255, 255);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+
+
+.correctstyle{
+  background-color: rgb(30, 255, 0);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+
+.wrongstyle{
+  background-color: rgb(255, 0, 0);
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+
+
+
+#arrowpointer{
+  margin-top: 7%;
+  margin-left: 6%;
+}
+
+#arrow3{
+  transform: scale(0.8);
+}
+
+
+#udforsk{
+display: flex;
+gap: 20px;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+color: white;
+font-size: 18px;
+margin-top: -15%;
+}
+
+#arrow1{
+  width: 10%;
+}
+
+#box1{
+  background-color: #9A0003;
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+
+#boxcon{
+  display: flex;
+  justify-content: center;
+}
+#containerbutton{
+  margin-top: 2%;
+  margin-left: 75%;
+  opacity: 0%;
+}
+
+
 h3{
     margin-top: 8%;
     color: black;
     font-size: 22px;
     text-align: center;
 }
-
-
 
 
 

@@ -11,12 +11,12 @@ function Redirect() {
 
 
 
-
+/* Tjek svar kode */
   function checkanswer(){
     console.log("Answer has been checked");
     
     
-
+/* Definer selectedtarget som et event der er targeted, deefter hentes data-value for at se om svaret er korrekt */
     let selectedElement = event.target;
 
     let AnswerData = selectedElement.getAttribute("data-value");
