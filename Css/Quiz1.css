@@ -23,11 +23,23 @@ body {
   z-index: -1;
 }
 
-#mainvideo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
+#mainvideo{
+    margin-top: -1.8%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    display: block;
+ 
+}
+
+#Videoplay{
+    margin-top: -1.8%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    display: none;
 }
 
 /* <!---------------- Top Nav ----------------> */
@@ -80,24 +92,6 @@ header {
 .quiz-question h3 { 
   font-size: var(--h3);
 }
-
-/*         <!---------------- Content Transitions ---------------->  */
-.element-transition {
-  transition: opacity 1s ease-in-out;
-}
-
-.hidden {
-  opacity: 0;
-  visibility: hidden; /* This ensures complete hiding */
-  display: none; /* This prevents any interaction with the hidden element */
-}
-
-.visible {
-  opacity: 1;
-  visibility: visible;
-  display: block;
-}
-
 
 /*     <!---------------- Illustration ----------------> */
 .Quiz1-illustration {

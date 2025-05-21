@@ -3,6 +3,7 @@
     padding: 0;
   }
 
+  /* Video style */
 #mainvideo{
     margin-top: -1.8%;
     height: 100%;
@@ -19,6 +20,8 @@
     z-index: -1;
 }
 
+
+ /* tekst style */
 body{
   font-family: "Inter", sans-serif;
   font-style: normal;

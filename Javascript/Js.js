@@ -1,19 +1,25 @@
 /* Video 1 redirect */
 
+
+
+/* Funktionen til redirection */
 function Redirect() {
     console.log("video stopped")
     window.location.href = "Quiz1.html";
 }
 
+/* Funktionen til afspilning af video */
 function playvideo(){
     const videox = document.getElementById("Videoplay")
     const evry = document.querySelector("main")
 
+    /* Style ændring for at vise skjult video og gemme baggrund */
     videox.style.display = "block";
     evry.style.display = "none";
     
 
-
+    /* videox const ændres ved at sætte videoen igang og unmute den, dette går udenom Apple's webkit ristriktion om at man ikke må redirect til en video med lyd.
+    derfor afspilles den i samme vindue */
     videox.muted = false;
     videox.play().then(() => {
       console.log("Video is playing with sound.");
@@ -22,38 +28,6 @@ function playvideo(){
     });
     videox.addEventListener("ended", Redirect);
   }
-
-
-
-
-
-
-
-
-
-
-
-/* Tjek svar kode */
-  function checkanswer(){
-    console.log("Answer has been checked");
-    
-    
-/* Definer selectedtarget som et event der er targeted, deefter hentes data-value for at se om svaret er korrekt */
-    let selectedElement = event.target;
-
-    let AnswerData = selectedElement.getAttribute("data-value");
-
-    if (AnswerData === "correct") {
-        document.getElementById("correctanswertext").innerHTML = " <h2> ✅ Sådan - du svarede rigtigt! </h2> ";
-        
-  
-    } else {
-        document.getElementById("correctanswertext").innerHTML = " <h2> ❌ Det er desværre det forkerte svar </h2> ";
-    } 
-    
-    setTimeout(() => {window.location.href = "Video3.html"; }, 6500 ) 
-}
-
 
 
 

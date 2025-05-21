@@ -1,8 +1,6 @@
-
 /* Tjek svar kode */
 
-
-
+/* sæt maks svar man kan give til 3 ved at forhindre flere klik */
 let answercount = 0;
 const maxAnswers = 3;
 
@@ -26,24 +24,21 @@ const maxAnswers = 3;
   
     } else {
         selectedElement2.style.backgroundColor = "#ff0000";
-
-   /* setTimeout(() => {window.location.href = "Video3.html"; }, 6500 ) */
 }
 
 
-
+/* Hvis man klikker på et target med en data value lægges +1 til answercount */
 selectedElement2.dataset.clicked = "true";
 answercount++;
 
 
+/* Når man har svaret på alle 3, bliver fortsæt kanppen synlig */
 if (answercount === 3) {
 
     document.querySelector("#containerbutton").style.transition = "opacity 0.9s ease";
     document.querySelector("#containerbutton").style.opacity ="100%";
     
-}
-
-  }
+} }
 
 
 

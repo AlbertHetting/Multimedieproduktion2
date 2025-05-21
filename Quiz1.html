@@ -13,15 +13,18 @@
 
 </head>
 <body>
-  <!---------------- Background video ---------------->
-  <section class="BackgroundVID">
+
+  <main>
+
+      <!---------------- Background video ---------------->
+    <section class="BackgroundVID">
       <video autoplay muted loop playsinline id="mainvideo">
         <source src="Videos/Dotted50v3.mp4" type="video/mp4">
       </video>
-  </section>
+    </section>
 
-  <!---------------- Top Nav ---------------->
-  <header>
+    <!---------------- Top Nav ---------------->
+    <header>
     <nav class="nav">
         <a href="index.html" class="nav-left">
             <img src="Images/Back.svg" alt="Back" height="24">
@@ -32,9 +35,8 @@
             <span>Sprog</span>
         </a>
     </nav>
-  </header>
+    </header>
 
-  <main>
     <!---------------- Question ---------------->
     <section class="quiz-question">
       <h3>
@@ -72,16 +74,24 @@
 
     <!---------------- Bottom section ---------------->
     <section class="Bottom-section">
-      <div class="container">
-        <a href="Video2.html" class="Next" id="nextBtn">
+      <div class="container" onclick="playvideo()">
+        <a onclick="playvideo()" class="Next" id="nextBtn">
           Fortsæt
-          <img src="Images/next.svg" alt="Next arrow" style="width: 37px; height: 37px;">
+          <img src="Images/next.svg" alt="Next arrow" style="width: 37px; height: 37px;" onclick="playvideo()">
         </a>
         <div class="progress-bar-container">
           <img src="Images/progress_bar.svg" alt="Progress bar" class="progress-bar">
         </div>
     </section>
   </main>
+
+
+    <section id="Videoplaybox">
+    <video paused id="Videoplay" src="Videos/Sektion2.mp4"></video>
+    </section>
+
+
+
     <!---------------- Script ---------------->
   <script src="Javascript/slider1.js"></script>
 

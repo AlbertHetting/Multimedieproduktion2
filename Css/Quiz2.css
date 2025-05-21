@@ -10,23 +10,18 @@
     width: 100%;
     position: relative;
     z-index: -1;
+    display: block;
+ 
 }
 
-#Video1{
+#Videoplay{
     margin-top: -1.8%;
     height: 100%;
     width: 100%;
     position: relative;
     z-index: -1;
+    display: none;
 }
-
-
-
-/* Javascript Classes */
-
-
-
-
 
 
 body{
@@ -54,6 +49,9 @@ body{
   font-weight: 600;
   margin-bottom: -2%;
 }
+
+
+/* Stylig til svar grafikken */
 
 #Answergraphic{
     display: flex;
@@ -86,12 +84,16 @@ h3{
     text-align: center;
 }
 
+
+/* Stylig til svar til spørgsmålet */
+
 #correctanswertext h2{
     font-size: 35px;
     text-align: center;
     margin-top: 4%;
 }
 
+/* Forfra knap */
 #reset{
     margin-left: 3%;
     margin-top: -58%;

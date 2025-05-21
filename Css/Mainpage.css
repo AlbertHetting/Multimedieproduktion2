@@ -39,12 +39,6 @@ main{
 }
 
 
-
-
-
-
-/* Javascript Classes */
-
 body{
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -102,6 +96,7 @@ margin-top: -4.1%;
 #arrow1{
   width: 3%;
 }
+
 /* Sort Baggrund til knappen */
 #box1{
   background-color: black;
@@ -131,7 +126,3 @@ margin-top: -4.1%;
   filter: blur(4px);
   width: 80%;
 }
-
-
-/* Quiz 4 styling*/
-

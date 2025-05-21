@@ -126,3 +126,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000)
   }, 6000)
 })
+
+function Redirect() {
+    console.log("video stopped")
+    window.location.href = "Quiz2.html";
+}
+
+function playvideo(){
+    const videox = document.getElementById("Videoplay")
+    const evry = document.querySelector("main")
+
+    videox.style.display = "block";
+    evry.style.display = "none";
+    
+
+
+    videox.muted = false;
+    videox.play().then(() => {
+      console.log("Video is playing with sound.");
+    }).catch((err) => {
+      console.warn("Playback failed:", err);
+    });
+    videox.addEventListener("ended", Redirect);
+  }
+
