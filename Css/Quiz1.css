@@ -13,15 +13,6 @@ body {
 }
 
 /*   <!---------------- Background video ---------------->  */
-.BackgroundVID {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
 
 #mainvideo{
     margin-top: -1.8%;

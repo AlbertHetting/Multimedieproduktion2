@@ -5,6 +5,10 @@
 
 /* Video Properties */
 
+body{
+  overflow: hidden;
+}
+
 main{
   display: block;
 }

@@ -1,3 +1,45 @@
+/* Tjek svar kode */
+
+/* sæt maks svar man kan give til 3 ved at forhindre flere klik */
+let answercount = 0;
+const maxAnswers = 1;
+
+  function checkanswer(){
+    console.log("Answer has been checked");
+    if (answercount >= maxAnswers) return;
+   
+    
+/* Definer selectedtarget som et event der er targeted, deefter hentes data-value for at se om svaret er korrekt */
+    let selectedElement2 = event.target.closest("[data-value]");
+
+    selectedElement2.style.transition = "all 0.5s ease";
+
+    let AnswerData2 = selectedElement2.getAttribute("data-value");
+
+    if (AnswerData2 === "correct") {
+
+        selectedElement2.style.backgroundColor = "#1eff00";
+        
+        
+  
+    } else {
+        selectedElement2.style.backgroundColor = "#ff0000";
+}
+
+
+/* Hvis man klikker på et target med en data value lægges +1 til answercount */
+selectedElement2.dataset.clicked = "true";
+answercount++;
+
+
+/* Når man har svaret på alle 3, bliver fortsæt kanppen synlig */
+if (answercount === 1) {
+
+    document.querySelector("#containerbutton").style.transition = "opacity 0.9s ease";
+    document.querySelector("#containerbutton").style.opacity ="100%";
+    
+} }
+
 /* Video 1 redirect */
 
 
@@ -5,7 +47,7 @@
 /* Funktionen til redirection */
 function Redirect() {
     console.log("video stopped")
-    window.location.href = "Quiz1.html";
+    window.location.href = "Quiz4.html";
 }
 
 /* Funktionen til afspilning af video */
@@ -32,6 +74,7 @@ function playvideo(){
 
 
 
+
 // Hvis videoen er preloaded og der er genereret en blob url vises den:
 const blobUrl = sessionStorage.getItem('Videos/Dotted50v3.mp4');
 
@@ -48,19 +91,14 @@ if (blobUrl) {
 
 
 // Hvis videoen er preloaded og der er genereret en blobl uel vises den:
-const blobUrl2 = sessionStorage.getItem('Videos/Sektion1.mp4');
+const blobUrl4 = sessionStorage.getItem('Videos/Sektion4.mp4');
 
-const PlayVideo1 = document.getElementById('Videoplay');
+const PlayVideo4 = document.getElementById('Videoplay');
 
 if (blobUrl) {
-  PlayVideo1.src = blobUrl2;
+  PlayVideo4.src = blobUrl4;
 } else {
   // Hvis videoen ikke er preloaded, bruges det originale video src i stedet
-  PlayVideo1.src = 'Videos/Sektion1.mp4';
+  PlayVideo4.src = 'Videos/Sektion4.mp4';
 }
 
-
-
-
-
-  

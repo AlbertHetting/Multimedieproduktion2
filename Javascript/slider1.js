@@ -1,99 +1,74 @@
-/*         <!---------------- Variables & Initialization ---------------->  */
-const rail   = document.querySelector('.slider-rail')
-const handle = rail.querySelector('.slider-dot')
-const bubble = rail.querySelector('.bubble-text')
-const nextBtn = document.getElementById('nextBtn')
-let dragging = false
-let hasInteracted = false
+window.addEventListener('DOMContentLoaded', function() {
+  // elements
+  const illustration = document.querySelector('.Quiz1-illustration');
+  const sliderSection = document.querySelector('.slider-section');
+  const sliderRail = document.querySelector('.slider-rail');
+  const sliderDot = document.querySelector('.slider-dot');
+  const bubbleText = document.querySelector('.bubble-text');
+  const nextBtn = document.getElementById('nextBtn');
 
-let sliderValue = 0
-updateBubble(sliderValue)
+  // prepare initial states
+  sliderSection.classList.add('fade', 'hidden');
+  illustration.classList.add('fade');
+  nextBtn.style.opacity = 0;
+  nextBtn.style.pointerEvents = 'none';
 
-nextBtn.style.opacity = '0'
-nextBtn.style.visibility = 'hidden'
-nextBtn.style.pointerEvents = 'none'
-
-/*         <!---------------- Event Listeners - Touch & Mouse Down ---------------->  */
-handle.addEventListener('mousedown', () => {
-  dragging = true
-  handle.classList.add('active')
-})
-
-handle.addEventListener('touchstart', (e) => {
-  dragging = true
-  handle.classList.add('active')
-  e.preventDefault()
-})
-
-/*         <!---------------- Event Listeners - Touch & Mouse Up ---------------->  */
-document.addEventListener('mouseup', () => {
-  if (dragging) {
-    dragging = false
-    handle.classList.remove('active')
-    
-    if (hasInteracted || sliderValue > 0) {
-      showNextButton()
-    }
-  }
-})
-
-document.addEventListener('touchend', () => {
-  if (dragging) {
-    dragging = false
-    handle.classList.remove('active')
-    
-    if (hasInteracted || sliderValue > 0) {
-      showNextButton()
-    }
-  }
-})
-
-/*         <!---------------- Slider Position  ---------------->  */
-function updateSlider(clientX) {
-  const railRect = rail.getBoundingClientRect()
-  
-  let position = clientX - railRect.left
-  
-  if (position < 0) position = 0
-  if (position > railRect.width) position = railRect.width
-  
-  let percentage = Math.round((position / railRect.width) * 100)
-  
-  handle.style.left = `${position}px`
-  
-  sliderValue = percentage
-  updateBubble(sliderValue)
-  
-  hasInteracted = true
-}
-
-/*         <!---------------- Event Listeners - Movement ---------------->  */
-document.addEventListener('mousemove', (e) => {
-  if (!dragging) return
-  updateSlider(e.clientX)
-})
-
-document.addEventListener('touchmove', (e) => {
-  if (!dragging) return
-  const touch = e.touches[0]
-  updateSlider(touch.clientX)
-  e.preventDefault()
-})
-
-/*         <!---------------- UI ---------------->  */
-function updateBubble(value) {
-  bubble.textContent = `${value} %`
-}
-
-function showNextButton() {
-  nextBtn.style.visibility = 'visible'
-  nextBtn.style.pointerEvents = 'auto'
-  
+  // first fade out illustration
   setTimeout(() => {
-    nextBtn.style.opacity = '1'
-    nextBtn.style.transition = 'opacity 0.5s ease-in-out'
-  }, 50)
-}
+    illustration.classList.add('transparent');
+    
+    // after illustration fades out completely (1s), show the slider
+    setTimeout(() => {
+      illustration.style.display = 'none';
+      sliderSection.classList.remove('hidden');
+    }, 1000);
+  }, 6000);
+
+  // dragging logic
+  let isDragging = false;
+
+  function updatePosition(clientX) {
+    const rect = sliderRail.getBoundingClientRect();
+    let x = clientX - rect.left;
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+    const pct = x / rect.width * 100;
+    sliderDot.style.left = pct + '%';
+    bubbleText.textContent = Math.round(pct) + ' %';
+  }
+
+  sliderDot.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    isDragging = true;
+    sliderDot.setPointerCapture(e.pointerId);
+    sliderDot.classList.add('active');
+  });
+
+  sliderDot.addEventListener('pointermove', e => {
+    if (!isDragging) return;
+    updatePosition(e.clientX);
+  });
+
+  sliderDot.addEventListener('pointerup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    sliderDot.releasePointerCapture(e.pointerId);
+    sliderDot.classList.remove('active');
+
+    // fade in Next button
+    nextBtn.style.transition = 'opacity 0.5s ease-in-out';
+    nextBtn.style.opacity = 1;
+    nextBtn.style.pointerEvents = 'auto';
+  });
+
+  // also cancel dragging if pointer leaves
+  sliderDot.addEventListener('pointercancel', () => {
+    isDragging = false;
+    sliderDot.classList.remove('active');
+  });
+});
+
+
 
 /*         <!---------------- Content Transitions ---------------->  */
 document.addEventListener('DOMContentLoaded', function() {
@@ -127,20 +102,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 6000)
 })
 
+
+
+/* Funktionen til redirection */
 function Redirect() {
     console.log("video stopped")
     window.location.href = "Quiz2.html";
 }
 
+/* Funktionen til afspilning af video */
 function playvideo(){
     const videox = document.getElementById("Videoplay")
     const evry = document.querySelector("main")
 
+    /* Style ændring for at vise skjult video og gemme baggrund */
     videox.style.display = "block";
     evry.style.display = "none";
     
 
-
+    /* videox const ændres ved at sætte videoen igang og unmute den, dette går udenom Apple's webkit ristriktion om at man ikke må redirect til en video med lyd.
+    derfor afspilles den i samme vindue */
     videox.muted = false;
     videox.play().then(() => {
       console.log("Video is playing with sound.");
@@ -150,3 +131,29 @@ function playvideo(){
     videox.addEventListener("ended", Redirect);
   }
 
+
+
+// Hvis videoen er preloaded og der er genereret en blob url vises den:
+const blobUrl = sessionStorage.getItem('Videos/Dotted50v3.mp4');
+
+const mainVideo = document.getElementById('mainvideo');
+
+if (blobUrl) {
+  mainVideo.src = blobUrl;
+} else {
+  // Hvis videoen ikke er preloaded, bruges det originale video src i stedet
+  mainVideo.src = 'Videos/Dotted50v3.mp4';
+}
+
+
+// Hvis videoen er preloaded og der er genereret en blobl uel vises den:
+const blobUrl1 = sessionStorage.getItem('Videos/Sektion2.mp4');
+
+const PlayVideo1 = document.getElementById('Videoplay');
+
+if (blobUrl) {
+  PlayVideo1.src = blobUrl1;
+} else {
+  // Hvis videoen ikke er preloaded, bruges det originale video src i stedet
+  PlayVideo1.src = 'Videos/Sektion2.mp4';
+}

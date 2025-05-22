@@ -26,6 +26,7 @@
 
 body{
   font-family: "Inter", sans-serif;
+  overflow: hidden;
   font-style: normal;
   color: white;
 }
@@ -113,6 +114,49 @@ h2 a{
 
 #Backspace{
     width: 55%;
+}
+
+
+/* forfra knap*/
+#udforsk2{
+display: flex;
+gap: 20px;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+color: white;
+font-size: 18px;
+margin-top: -15%;
+}
+
+#arrow1{
+  width: 10%;
+}
+
+#box11{
+  background-color: #9A0003;
+  border-radius: 70px;
+  width: 240px;
+  height: 70px;
+}
+
+#boxcon11{
+  display: flex;
+  justify-content: center;
+}
+
+#containerbutton11{
+  margin-top: -3.7%;
+  margin-left: 75%;
+  opacity: 0%;
+}
+
+
+h3{
+    margin-top: 8%;
+    color: black;
+    font-size: 22px;
+    text-align: center;
 }
 
 
