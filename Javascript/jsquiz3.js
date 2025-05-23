@@ -1,6 +1,6 @@
-/* Tjek svar kode */
+/* Kontrol af svar - kode*/
 
-/* sæt maks svar man kan give til 3 ved at forhindre flere klik */
+/* Begrænsning på og tæller af antal afgivne svar*/
 let answercount = 0;
 const maxAnswers = 1;
 
@@ -8,8 +8,9 @@ const maxAnswers = 1;
     console.log("Answer has been checked");
     if (answercount >= maxAnswers) return;
    
+
     
-/* Definer selectedtarget som et event der er targeted, deefter hentes data-value for at se om svaret er korrekt */
+    /* Definition af selectedtarget som event. Evtentet bliver targeted, hvor data-value hentes efterfølengende for at se kontrollere om svaret er korrekt */
     let selectedElement2 = event.target.closest("[data-value]");
 
     selectedElement2.style.transition = "all 0.5s ease";
@@ -24,25 +25,32 @@ const maxAnswers = 1;
   
     } else {
         selectedElement2.style.backgroundColor = "#ff0000";
-}
+    }
 
+    /* Tæller funktion - hvis man klikker på en svarmulighed, tillægges +1 til answercount variablen */
+    selectedElement2.dataset.clicked = "true";
+    answercount++;
 
-/* Hvis man klikker på et target med en data value lægges +1 til answercount */
-selectedElement2.dataset.clicked = "true";
-answercount++;
+    /* Synliggøreslse af knap fortsæt knap, når answercount har ramt 1 */
+    if (answercount === 1) {
 
-
-/* Når man har svaret på alle 3, bliver fortsæt kanppen synlig */
-if (answercount === 1) {
-
-    document.querySelector("#containerbutton").style.transition = "opacity 0.9s ease";
-    document.querySelector("#containerbutton").style.opacity ="100%";
-    
+        document.querySelector("#containerbutton").style.transition = "opacity 0.9s ease";
+        document.querySelector("#containerbutton").style.opacity ="100%";
+        
 } }
 
+
+
+
+
+
+
+
+
+
+
+
 /* Video 1 redirect */
-
-
 
 /* Funktionen til redirection */
 function Redirect() {
